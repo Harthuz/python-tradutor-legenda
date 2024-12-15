@@ -1,5 +1,8 @@
+# EDITAR VARIÁVEIS
 diretório_legenda = "Living Single - S01 E03 - Whose Date Is It Anyway (480p - HULU Web-DL).srt"
-nome_final = "traduzido.srt"
+nome_final = "LEGENDA_TRADUZIDA.srt"
+idioma_origem = 'en'
+idioma_final = 'pt'
 
 from module import module
 module()
@@ -16,7 +19,7 @@ def traduzir_bloco(blocos):
     texto_para_traduzir = separador.join(['\n'.join(bloco[2:]) for bloco in blocos])  # Pegar o texto a partir da linha 3 de cada bloco
     
     # Traduzir o texto completo usando GoogleTranslator
-    translated_text = GoogleTranslator(source='en', target='pt').translate(texto_para_traduzir)
+    translated_text = GoogleTranslator(source=idioma_origem, target=idioma_final).translate(texto_para_traduzir)
     
     # Separar o texto traduzido de volta em blocos com base no separador
     textos_traduzidos = translated_text.split(separador)
