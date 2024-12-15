@@ -15,6 +15,3 @@ def module():
     # Instala os pacotes necessários
     for pacote in pacotes_necessarios:
         instalar_pacote(pacote)
-
-# Resto do seu código
-print("Pacotes instalados, agora o script pode ser executado normalmente.")
